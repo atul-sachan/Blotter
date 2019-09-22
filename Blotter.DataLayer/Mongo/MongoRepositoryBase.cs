@@ -12,16 +12,10 @@ namespace Blotter.DataLayer.Mongo
         private string connectionString;
         IConfigurationRoot configuration;
 
-        public MongoRepositoryBase()
-        {
-
-        }
-
         public MongoRepositoryBase(IConfigurationRoot configuration)
-            : this()
+            : this(configuration, "MongoConnection")
         {
-            this.connectionId = "MongoConnection";
-            this.configuration = configuration;
+            
         }
 
         public MongoRepositoryBase(IConfigurationRoot configuration, string connectionId)

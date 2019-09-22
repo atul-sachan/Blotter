@@ -62,7 +62,7 @@ namespace Blotter.DataLayer.Mongo
 
         public IMongoCollection<T> GetCollection<T>()
         {
-            return Database.GetCollection<T>((typeof(T).Name));
+            return Database.GetCollection<T>((typeof(T).Name).Replace("Dto", ""));
         }
 
         #region IDisposable Support

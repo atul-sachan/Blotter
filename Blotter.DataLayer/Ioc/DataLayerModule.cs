@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using Blotter.DataLayer.Mongo;
+using Blotter.DataLayer.Mongo.Mapping;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
@@ -31,6 +32,7 @@ namespace Blotter.DataLayer.Ioc
                                     .As(typeof(IRepository<>))
                                     .WithParameter("connectionId", "MongoConnection1")
                                     .InstancePerDependency();
+            MongoClassMap.Instance();
         }
     }
 }

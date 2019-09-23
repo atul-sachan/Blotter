@@ -7,7 +7,6 @@ namespace Blotter.DataLayer
     {
         private IContainer container;
 
-
         public DatabaseHelper(IContainer container)
         {
             this.container = container;

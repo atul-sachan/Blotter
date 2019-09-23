@@ -5,15 +5,23 @@ VisualStudioVersion = 16.0.29215.179
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataLayer", "DataLayer", "{DCB1E4F4-3B3A-4343-B3FF-08716FD65834}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blotter.DataLayer", "Blotter.DataLayer\Blotter.DataLayer.csproj", "{0C3C8B83-086D-4AA8-9FB3-0709404F02BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blotter.DataLayer", "Blotter.DataLayer\Blotter.DataLayer.csproj", "{0C3C8B83-086D-4AA8-9FB3-0709404F02BB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{F127862D-7A02-4631-B480-E97619E82876}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blotter.Domain", "Blotter.Domain\Blotter.Domain.csproj", "{7DB53F70-0587-417C-B150-4FE9875839BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blotter.Domain", "Blotter.Domain\Blotter.Domain.csproj", "{7DB53F70-0587-417C-B150-4FE9875839BA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{686122D6-A5D4-495F-A370-B0FDB120E256}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blotter.Common", "Blotter.Common\Blotter.Common.csproj", "{A41DE3B9-4D9A-4032-8D81-4A2CC7154D43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blotter.Common", "Blotter.Common\Blotter.Common.csproj", "{A41DE3B9-4D9A-4032-8D81-4A2CC7154D43}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{AE8C7F11-E16D-4BB8-A735-62102D29F643}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blotter.Business", "Blotter.Business\Blotter.Business.csproj", "{C08B45E3-E6B5-4B11-8DE9-135E73878DBD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{26876BF1-4D13-4326-914D-C3BC7C1DB928}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blotter.AzureServiceApi", "Blotter.AzureServiceApi\Blotter.AzureServiceApi.csproj", "{76D82F11-E61E-4F76-9A93-2CD17D364928}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +41,14 @@ Global
 		{A41DE3B9-4D9A-4032-8D81-4A2CC7154D43}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A41DE3B9-4D9A-4032-8D81-4A2CC7154D43}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A41DE3B9-4D9A-4032-8D81-4A2CC7154D43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C08B45E3-E6B5-4B11-8DE9-135E73878DBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C08B45E3-E6B5-4B11-8DE9-135E73878DBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C08B45E3-E6B5-4B11-8DE9-135E73878DBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C08B45E3-E6B5-4B11-8DE9-135E73878DBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76D82F11-E61E-4F76-9A93-2CD17D364928}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76D82F11-E61E-4F76-9A93-2CD17D364928}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76D82F11-E61E-4F76-9A93-2CD17D364928}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76D82F11-E61E-4F76-9A93-2CD17D364928}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,6 +57,8 @@ Global
 		{0C3C8B83-086D-4AA8-9FB3-0709404F02BB} = {DCB1E4F4-3B3A-4343-B3FF-08716FD65834}
 		{7DB53F70-0587-417C-B150-4FE9875839BA} = {F127862D-7A02-4631-B480-E97619E82876}
 		{A41DE3B9-4D9A-4032-8D81-4A2CC7154D43} = {686122D6-A5D4-495F-A370-B0FDB120E256}
+		{C08B45E3-E6B5-4B11-8DE9-135E73878DBD} = {AE8C7F11-E16D-4BB8-A735-62102D29F643}
+		{76D82F11-E61E-4F76-9A93-2CD17D364928} = {26876BF1-4D13-4326-914D-C3BC7C1DB928}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {87FF8215-8B69-42BB-9BC4-B10CC505A870}

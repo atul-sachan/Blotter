@@ -7,6 +7,12 @@
   <ItemGroup>
     <PackageReference Include="Autofac" Version="4.2.1" />
     <PackageReference Include="AutoMapper" Version="9.0.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Blotter.Common\Blotter.Common.csproj" />
+    <ProjectReference Include="..\Blotter.Domain\Blotter.Domain.csproj" />
   </ItemGroup>
 
 </Project>

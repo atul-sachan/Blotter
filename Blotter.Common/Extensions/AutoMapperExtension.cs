@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,14 +8,16 @@ namespace Blotter.Common.Extensions
 {
     public static class AutoMapperExtension
     {
-        //public static T MapTo<T>(this object value)
-        //{
-        //    return AutoMapper.Mapper.Map<T>(value);
-        //}
+        public static D MapTo<S, D>(this IMapper mapper, S value)
+        {
+            return mapper.Map<S,D>(value);
+        }
 
-        //public static IEnumerable<T> EnumerableTo<T>(this object value)
-        //{
-        //    return AutoMapper.Mapper.Map<IEnumerable<T>>(value);
-        //}
+        public static IEnumerable<D> EnumerableTo<S, D>(this IMapper mapper, IEnumerable<S> value)
+        {
+            return mapper.Map<IEnumerable<S>,IEnumerable<D>>(value);
+        }
+
+
     }
 }

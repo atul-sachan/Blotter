@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using Autofac.Core;
 using Blotter.DataLayer.Mongo;
 using Blotter.DataLayer.Mongo.Mapping;
 using Microsoft.Extensions.Configuration;
@@ -8,9 +9,9 @@ using System.Text;
 
 namespace Blotter.DataLayer.Ioc
 {
+    
     public class DataLayerModule: Module
     {
-        
         public DataLayerModule()
         {
             
@@ -19,6 +20,7 @@ namespace Blotter.DataLayer.Ioc
         protected override void Load(ContainerBuilder builder)
         {
             MongoDatabaseDependency(builder);
+            
         }
 
         private void MongoDatabaseDependency(ContainerBuilder builder)

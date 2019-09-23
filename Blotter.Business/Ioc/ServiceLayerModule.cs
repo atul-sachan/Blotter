@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using Blotter.Business.Interfaces;
 using Blotter.Business.Repositories;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -16,8 +17,14 @@ namespace Blotter.Business.Ioc
 
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterType<CountryService>().As<ICountryService>().InstancePerDependency();
-            builder.RegisterType<StateService>().As<IStateService>().InstancePerDependency();
+            builder.RegisterType<CountryService>().As<ICountryService>();
+            builder.RegisterInstance(new LoggerFactory())
+                .As<ILoggerFactory>();
+
+            builder.RegisterGeneric(typeof(Logger<>))
+                   .As(typeof(ILogger<>))
+                   .SingleInstance();
+            //builder.RegisterType<StateService>().As<IStateService>().InstancePerDependency();
         }
     }
 }

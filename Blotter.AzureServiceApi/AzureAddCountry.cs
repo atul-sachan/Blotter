@@ -10,6 +10,9 @@ using Newtonsoft.Json;
 using AzureFunctions.Autofac;
 using Blotter.AzureServiceApi.Infrastructure;
 using Blotter.Business.Interfaces;
+using System.Net.Http;
+using System.Net;
+using Blotter.Business.Models;
 
 namespace Blotter.AzureServiceApi
 {
@@ -17,23 +20,23 @@ namespace Blotter.AzureServiceApi
     public static class AzureAddCountry
     {
         [FunctionName("AzureAddCountry")]
-        public static async Task<IActionResult> Run(
+        public static async Task<HttpResponseMessage> Run(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
-            [Inject] ICountryService countryService,
-            ILogger log)
+            ILogger log, [Inject] ICountryService countryService)
         {
             log.LogInformation("C# HTTP trigger function processed a request.");
 
             string name = req.Query["name"];
 
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-            dynamic data = JsonConvert.DeserializeObject(requestBody);
+            var data = JsonConvert.DeserializeObject<CountryModel>(requestBody);
             countryService.Add(data);
-            name = name ?? data?.name;
+            
+            return new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = new StringContent($"Hello, {name}")
+            };
 
-            return name != null
-                ? (ActionResult)new OkObjectResult($"Hello, {name}")
-                : new BadRequestObjectResult("Please pass a name on the query string or in the request body");
         }
     }
 }

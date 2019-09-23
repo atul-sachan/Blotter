@@ -8,8 +8,8 @@ namespace Blotter.Business.Interfaces
 {
     public interface IStateService
     {
-        StateModel Get(string id);
-        Task<StateModel> GetAsync(string id);
+        //StateModel Get(string id);
+        //Task<StateModel> GetAsync(string id);
         void Add(StateModel stateModel);
         Task AddAsync(StateModel stateModel);
     }

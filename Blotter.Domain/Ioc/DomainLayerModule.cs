@@ -17,7 +17,7 @@ namespace Blotter.Domain.Ioc
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterType<CountryRepository>().As<ICountryRepository>().InstancePerDependency();
-            builder.RegisterType<StateRepository>().As<IStateRepository>().InstancePerDependency();
+            //builder.RegisterType<StateRepository>().As<IStateRepository>().InstancePerDependency();
         }
     }
 }

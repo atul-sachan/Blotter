@@ -8,8 +8,8 @@ namespace Blotter.Domain.Interfaces
 {
     public interface ICountryRepository
     {
-        CountryDto Get(string id);
-        Task<CountryDto> GetAsync(string id);
+        //CountryDto Get(string id);
+        //Task<CountryDto> GetAsync(string id);
         void Add(CountryDto countryDto);
         Task AddAsync(CountryDto countryDto);
     }

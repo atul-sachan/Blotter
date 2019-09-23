@@ -4,6 +4,7 @@ using Blotter.Business.Models;
 using Blotter.Common.Extensions;
 using Blotter.Domain.Dtos;
 using Blotter.Domain.Interfaces;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,33 +14,40 @@ namespace Blotter.Business.Repositories
 {
     public class StateService : IStateService
     {
-        private readonly IStateRepository repository;
-        private readonly IMapper mapper;
+        private readonly ILogger logger;
 
-        public StateService(IStateRepository repository, IMapper mapper)
+        //private readonly IStateRepository repository;
+        //private readonly IMapper mapper;
+
+        //public StateService(IStateRepository repository, IMapper mapper)
+        //{
+        //    this.repository = repository;
+        //    this.mapper = mapper;
+        //}
+
+        public StateService(ILogger logger)
         {
-            this.repository = repository;
-            this.mapper = mapper;
+            this.logger = logger;
         }
 
         public void Add(StateModel stateModel)
         {
-            repository.Add(mapper.MapTo<StateModel, StateDto>(stateModel));
+            //repository.Add(mapper.MapTo<StateModel, StateDto>(stateModel));
         }
 
         public async Task AddAsync(StateModel stateModel)
         {
-            await repository.AddAsync(mapper.MapTo<StateModel, StateDto>(stateModel));
+            //await repository.AddAsync(mapper.MapTo<StateModel, StateDto>(stateModel));
         }
 
-        public StateModel Get(string id)
-        {
-            return mapper.MapTo<StateDto, StateModel>(repository.Get(id));
-        }
+        //public StateModel Get(string id)
+        //{
+        //    return mapper.MapTo<StateDto, StateModel>(repository.Get(id));
+        //}
 
-        public async Task<StateModel> GetAsync(string id)
-        {
-            return mapper.MapTo<StateDto, StateModel>(await repository.GetAsync(id));
-        }
+        //public async Task<StateModel> GetAsync(string id)
+        //{
+        //    return mapper.MapTo<StateDto, StateModel>(await repository.GetAsync(id));
+        //}
     }
 }

@@ -20,25 +20,25 @@ namespace Blotter.AzureServiceApi.Infrastructure
 
             DependencyInjection.Initialize(builder =>
             {
-                var services = new ServiceCollection();
-                var configuration = new ConfigurationBuilder()
-                    .SetBasePath(Directory.GetCurrentDirectory())
-                    .AddJsonFile("local.settings.json", optional: true, reloadOnChange: true)
-                    .AddEnvironmentVariables()
-                    .Build();
+                //var services = new ServiceCollection();
+                //var configuration = new ConfigurationBuilder()
+                //    .SetBasePath(Directory.GetCurrentDirectory())
+                //    .AddJsonFile("local.settings.json", optional: true, reloadOnChange: true)
+                //    .AddEnvironmentVariables()
+                //    .Build();
 
-                var mapperConfig = new MapperConfiguration(config =>
-                        {
-                            config.AddProfile<MappingProfile>();
-                        });
+                //var mapperConfig = new MapperConfiguration(config =>
+                //        {
+                //            config.AddProfile<MappingProfile>();
+                //        });
 
-                IMapper mapper = mapperConfig.CreateMapper();
-                services.AddSingleton(mapper);
-                services.BuildServiceProvider();
+                //IMapper mapper = mapperConfig.CreateMapper();
+                //services.AddSingleton(mapper);
+                //services.BuildServiceProvider();
                 builder.RegisterModule(new Business.Ioc.ServiceLayerModule());
                 builder.RegisterModule(new Domain.Ioc.DomainLayerModule());
-                builder.RegisterModule(new DataLayer.Ioc.DataLayerModule());
-                builder.Populate(services);
+                //builder.RegisterModule(new DataLayer.Ioc.DataLayerModule());
+                //builder.Populate(services);
 
 
             }, functionName);
